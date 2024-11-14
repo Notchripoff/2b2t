@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2b2t²</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrKJqoH67anbOTgeMApqd60KjDovWkDtrkdg&s') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin: 10px 0;
+            justify-content: space-around;
+            border-bottom: 2px solid #4CAF50;
+        }
+        .tab {
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #e8f5e9;
+        }
+        .tab.active {
+            border-bottom: 2px solid #4CAF50;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            animation: slideIn 0.5s;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .active-content {
+            display: block;
+        }
+        .server-info, .staff-info, .about-info {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .staff-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .staff-list li {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2b2t²</h1>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'serverInfo')">Server Info</div>
+            <div class="tab" onclick="openTab(event, 'staffInfo')">Staff</div>
+            <div class="tab" onclick="openTab(event, 'aboutInfo')">About</div>
+            <div class="tab" onclick="openTab(event, 'discord')">Discord</div>
+        </div>
+
+        <div id="serverInfo" class="content active-content">
+            <div class="server-info">
+                <h2>Java Server</h2>
+                <p><strong>IP:</strong> 2b2t.zypher.club</p>
+            </div>
+            <div class="server-info">
+                <h2>Eagler 1.8.8/1.5.2</h2>
+                <p><strong>IP:</strong> <a href="wss://2b2t.zypher.club">wss://2b2t.zypher.club</a></p>
+            </div>
+            <div class="server-info">
+                <h2>Eagler b1.7.3</h2>
+                <p><strong>IP:</strong> Coming soon!</p>
+            </div>
+            <div class="server-info">
+                <h2>EaglerServerList</h2>
+                <p><a href="https://servers.e aglercraft.com/servers/d80966ed-0177-484e-91f2-1a037d08447b" target="_blank">View Server List</a></p>
+            </div>
+        </div>
+
+        <div id="staffInfo" class="content">
+            <div class="staff-info">
+                <h2>Staff</h2>
+                <p><strong>Owners:</strong></p>
+                <ul class="staff-list">
+                    <li>Colbster</li>
+                    <li>Namenotfound128</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="aboutInfo" class="content">
+            <div class="about-info">
+                <h2>About 2b2t²</h2>
+                <p>2b2t² is an Eaglercraft/Minecraft server joinable on Eaglercraft versions 1.5.2 to 1.8 and on Minecraft versions 1.8 to 1.21. It offers a unique experience for players looking to explore and engage in a vast, scary world.</p>
+            </div>
+        </div>
+
+        <div id="discord" class="content">
+            <div class="server-info">
+                <h2>Discord</h2>
+                <p><strong>Invite Link:</strong> <a href="https://discord.gg/sPUdcNXp3Y" target="_blank">Join our Discord</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active-content");
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active-content");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
